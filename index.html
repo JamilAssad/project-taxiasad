@@ -1,0 +1,1941 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149815482"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18149815482');
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxi Asad | Sint-Niklaas</title>
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Barlow:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #0a0a0a;
+        --dark: #111111;
+        --dark2: #1a1a1a;
+        --red: #c8101a;
+        --red-light: #e83642;
+        --red-dark: #8a0810;
+        --red-deep: #4a0508;
+        --gold: #c8101a;
+        --gold-light: #e83642;
+        --gold-dark: #8a0810;
+        --white: #ffffff;
+        --gray: #888888;
+        --light: #f5f5f5;
+        --border: rgba(200, 16, 26, 0.25);
+        --radius: 14px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Barlow", "Cairo", sans-serif;
+        background: var(--black);
+        color: var(--white);
+        line-height: 1.7;
+      }
+      body.rtl {
+        font-family: "Cairo", "Barlow", sans-serif;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 200;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        height: 68px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+      .nav-logo-icon {
+        width: 120px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+      .nav-logo-text .brand {
+        font-size: 1rem;
+        font-weight: 900;
+        color: var(--white);
+        letter-spacing: 1px;
+      }
+      .nav-logo-text .brand span {
+        color: var(--gold);
+      }
+      .nav-logo-text .sub {
+        font-size: 0.62rem;
+        color: var(--gray);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .nav-center {
+        display: flex;
+        gap: 2px;
+        list-style: none;
+      }
+      .nav-center a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        transition: all 0.2s;
+      }
+      .nav-center a:hover {
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .nav-center a.active {
+        color: var(--gold);
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lang-switcher {
+        display: flex;
+        gap: 4px;
+      }
+      .lang-btn {
+        background: transparent;
+        color: var(--gray);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 6px;
+        padding: 5px 9px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+      .lang-btn:hover {
+        border-color: var(--red);
+        color: var(--red-light);
+      }
+      .lang-btn.active {
+        background: var(--red);
+        color: var(--white);
+        border-color: var(--red);
+      }
+      .nav-call-btn {
+        background: linear-gradient(
+          135deg,
+          var(--red) 0%,
+          var(--red-light) 100%
+        );
+        color: var(--white);
+        border: none;
+        border-radius: 9px;
+        padding: 9px 18px;
+        font-family: inherit;
+        font-size: 0.88rem;
+        font-weight: 800;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        white-space: nowrap;
+        box-shadow: 0 4px 14px rgba(200, 16, 26, 0.3);
+      }
+      .nav-call-btn:hover {
+        transform: scale(1.04);
+        box-shadow: 0 6px 20px rgba(232, 54, 66, 0.5);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+        display: block;
+        transition: 0.3s;
+      }
+      @media (max-width: 860px) {
+        .nav-center {
+          display: none;
+        }
+        .nav-call-btn {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        nav.open .nav-center {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 68px;
+          left: 0;
+          right: 0;
+          background: var(--dark);
+          border-bottom: 1px solid var(--border);
+          padding: 12px 20px;
+          gap: 2px;
+        }
+        nav.open .nav-center a {
+          display: block;
+          padding: 12px 16px;
+        }
+      }
+      #home {
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 20px 60px;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, #000 0%, #0d0606 45%, #1a0608 100%);
+      }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(200, 16, 26, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 44px 44px;
+      }
+      .hero-glow {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(200, 16, 26, 0.14) 0%,
+          transparent 65%
+        );
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 680px;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(200, 16, 26, 0.1);
+        border: 1px solid rgba(200, 16, 26, 0.3);
+        color: var(--gold-light);
+        border-radius: 30px;
+        padding: 6px 20px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        margin-bottom: 28px;
+        animation: fadeDown 0.6s ease both;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .hero-title {
+        font-size: clamp(2.2rem, 6vw, 4rem);
+        font-weight: 900;
+        color: var(--white);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        animation: fadeDown 0.7s ease 0.1s both;
+      }
+      .hero-title em {
+        color: var(--gold);
+        font-style: normal;
+        display: block;
+      }
+      .hero-subtitle {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 44px;
+        animation: fadeDown 0.7s ease 0.2s both;
+      }
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+        animation: fadeDown 0.7s ease 0.3s both;
+      }
+      .btn-gold {
+        background: linear-gradient(
+          135deg,
+          var(--red) 0%,
+          var(--red-light) 100%
+        );
+        color: var(--white);
+        padding: 15px 34px;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 800;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        box-shadow: 0 6px 20px rgba(200, 16, 26, 0.35);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(232, 54, 66, 0.5);
+      }
+      .btn-outline-w {
+        background: transparent;
+        color: var(--white);
+        padding: 15px 34px;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.15s;
+      }
+      .btn-outline-w:hover {
+        border-color: var(--red);
+        color: var(--red-light);
+      }
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        margin-top: 64px;
+        flex-wrap: wrap;
+        animation: fadeUp 0.7s ease 0.5s both;
+      }
+      .stat-num {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--gold);
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 2px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .section {
+        padding: 90px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .section-tag {
+        display: inline-block;
+        background: rgba(200, 16, 26, 0.1);
+        color: var(--gold);
+        border: 1px solid rgba(200, 16, 26, 0.25);
+        border-radius: 20px;
+        padding: 4px 18px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .section-title {
+        font-size: clamp(1.7rem, 4vw, 2.4rem);
+        font-weight: 900;
+        color: var(--white);
+      }
+      .section-sub {
+        font-size: 0.97rem;
+        color: var(--gray);
+        margin-top: 10px;
+      }
+      .gold-line {
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--red-light),
+          var(--red),
+          var(--red-dark)
+        );
+        border-radius: 2px;
+        margin: 14px auto 0;
+        box-shadow: 0 0 10px rgba(200, 16, 26, 0.4);
+      }
+      #features {
+        background: var(--dark);
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .feature-card {
+        background: var(--dark2);
+        border-radius: var(--radius);
+        padding: 30px 22px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--border);
+      }
+      .feature-icon {
+        width: 62px;
+        height: 62px;
+        background: rgba(200, 16, 26, 0.09);
+        border: 1px solid rgba(200, 16, 26, 0.18);
+        border-radius: 16px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.65rem;
+      }
+      .feature-title {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 8px;
+      }
+      .feature-text {
+        font-size: 0.86rem;
+        color: var(--gray);
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      @media (max-width: 900px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .gallery-item {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        aspect-ratio: 4/3;
+        background: var(--dark2);
+        position: relative;
+        cursor: pointer;
+        transition:
+          transform 0.25s,
+          border-color 0.25s,
+          box-shadow 0.25s;
+      }
+      .gallery-item:hover {
+        transform: translateY(-4px);
+        border-color: rgba(200, 16, 26, 0.55);
+        box-shadow: 0 12px 30px rgba(200, 16, 26, 0.18);
+      }
+      .gallery-item.large {
+        grid-column: span 2;
+        aspect-ratio: 16/10;
+      }
+      @media (max-width: 900px) {
+        .gallery-item.large {
+          grid-column: span 2;
+          aspect-ratio: 16/9;
+        }
+      }
+      @media (max-width: 520px) {
+        .gallery-item.large {
+          grid-column: span 1;
+          aspect-ratio: 4/3;
+        }
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+      .gallery-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.18);
+        font-size: 0.82rem;
+        text-align: center;
+        padding: 16px;
+      }
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.78) 0%,
+          rgba(0, 0, 0, 0.15) 45%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.25s;
+        display: flex;
+        align-items: flex-end;
+        padding: 16px;
+        pointer-events: none;
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-overlay span {
+        font-size: 0.85rem;
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        background: rgba(200, 16, 26, 0.85);
+        border-radius: 6px;
+      }
+      #booking {
+        background: linear-gradient(
+          155deg,
+          #0a0405 0%,
+          #14060a 50%,
+          #0a0a0a 100%
+        );
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 90px 20px;
+      }
+      .booking-card {
+        background: var(--dark2);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 780px;
+        margin: 0 auto;
+        border: 1px solid rgba(200, 16, 26, 0.18);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 560px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 430px) {
+        .nav-logo-text .brand {
+          font-size: 0.55rem;
+        }
+        .nav-logo-text .sub {
+          font-size: 0.5rem;
+        }
+      }
+
+      /* .nav-logo-text .brand { font-size: 1rem; font-weight: 900; color: var(--white); letter-spacing: 1px;} */
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-group.full {
+        grid-column: 1/-1;
+      }
+      label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .input-wrap {
+        position: relative;
+      }
+      .input-icon {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.95rem;
+        pointer-events: none;
+        color: var(--gray);
+      }
+      body.rtl .input-icon {
+        right: auto;
+        left: 14px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 13px 42px 13px 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid rgba(255, 255, 255, 0.09);
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 0.96rem;
+        color: var(--white);
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      body.rtl input,
+      body.rtl select,
+      body.rtl textarea {
+        padding: 13px 16px 13px 42px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(255, 255, 255, 0.2);
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(200, 16, 26, 0.08);
+      }
+      select {
+        appearance: none;
+        cursor: pointer;
+      }
+      select option {
+        background: #1a1a1a;
+        color: white;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+        padding: 13px 16px;
+      }
+      .btn-book {
+        width: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--red) 0%,
+          var(--red-light) 100%
+        );
+        color: var(--white);
+        padding: 16px;
+        border-radius: 10px;
+        border: none;
+        font-family: inherit;
+        font-size: 1.05rem;
+        font-weight: 900;
+        cursor: pointer;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        box-shadow: 0 6px 20px rgba(200, 16, 26, 0.32);
+      }
+      .btn-book:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(232, 54, 66, 0.45);
+      }
+      #success-msg {
+        display: none;
+        background: rgba(76, 175, 80, 0.08);
+        border: 1.5px solid #4caf50;
+        border-radius: 10px;
+        padding: 20px 24px;
+        text-align: center;
+        color: #81c784;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+      #success-msg .check {
+        font-size: 1.8rem;
+        display: block;
+        margin-bottom: 6px;
+      }
+      #reviews {
+        background: var(--dark);
+      }
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 18px;
+      }
+      .review-card {
+        background: var(--dark2);
+        border-radius: var(--radius);
+        padding: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: border-color 0.2s;
+      }
+      .review-card:hover {
+        border-color: rgba(200, 16, 26, 0.25);
+      }
+      .review-stars {
+        color: var(--gold);
+        font-size: 0.95rem;
+        margin-bottom: 14px;
+        letter-spacing: 2px;
+      }
+      .review-text {
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.7;
+        margin-bottom: 18px;
+        font-style: italic;
+      }
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .review-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--red) 0%,
+          var(--red-dark) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 0.95rem;
+        color: var(--white);
+        flex-shrink: 0;
+      }
+      .review-name {
+        font-weight: 800;
+        font-size: 0.92rem;
+        color: var(--white);
+      }
+      .review-location {
+        font-size: 0.75rem;
+        color: var(--gray);
+        margin-top: 1px;
+      }
+      #contact {
+        background: var(--black);
+        padding: 90px 20px;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      @media (max-width: 720px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+        background: var(--dark2);
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        text-decoration: none;
+        transition: border-color 0.2s;
+      }
+      .contact-item:hover {
+        border-color: var(--border);
+      }
+      .contact-item-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(200, 16, 26, 0.1);
+        border: 1px solid rgba(200, 16, 26, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .contact-item h4 {
+        font-size: 0.72rem;
+        color: var(--gray);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .contact-item p {
+        font-size: 0.95rem;
+        color: var(--white);
+        font-weight: 700;
+        margin-top: 2px;
+      }
+      .contact-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 4px;
+      }
+      .btn-whatsapp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: #25d366;
+        color: white;
+        padding: 14px 24px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.97rem;
+        transition: transform 0.15s;
+      }
+      .btn-whatsapp:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+      }
+      .btn-email-big {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 14px 24px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.97rem;
+        transition: all 0.15s;
+      }
+      .btn-email-big:hover {
+        border-color: var(--red);
+        color: var(--red-light);
+      }
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 4px;
+      }
+      .email-form input,
+      .email-form textarea {
+        background: var(--dark2);
+        border: 1.5px solid rgba(255, 255, 255, 0.09);
+        padding: 12px 16px;
+      }
+      .btn-send {
+        background: transparent;
+        color: var(--red-light);
+        border: 1.5px solid var(--red);
+        border-radius: 10px;
+        padding: 12px;
+        font-family: inherit;
+        font-size: 0.92rem;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.2s;
+      }
+      .btn-send:hover {
+        background: var(--red);
+        color: var(--white);
+        border-color: var(--red);
+      }
+      .map-container {
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        height: 300px;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+      .map-label {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.8rem;
+        color: var(--gray);
+      }
+      footer {
+        background: var(--dark);
+        border-top: 1px solid var(--border);
+        padding: 26px 20px;
+        text-align: center;
+      }
+      .footer-logo {
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 4px;
+      }
+      .footer-logo span {
+        color: var(--gold);
+      }
+      .footer-tagline {
+        font-size: 0.8rem;
+        color: var(--gray);
+      }
+      .footer-copy {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.18);
+        margin-top: 14px;
+      }
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 16px;
+      }
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        /* background: rgba(255, 255, 255, 0.06); */
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+      .footer-social a:hover {
+        transform: translateY(-3px);
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--dark);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      }
+      .footer-social a.fb {
+        background: #1877f2;
+        border-color: #1877f2;
+        color: #fff;
+      }
+      .footer-social a.ig  {
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+        border-color: #dc2743;
+        color: #fff;
+      }
+      .footer-social svg {
+        width: 20px;
+        height: 20px;
+      }
+      .sticky-call {
+        position: fixed;
+        bottom: 82px;
+        left: 20px;
+        z-index: 300;
+      }
+      body.rtl .sticky-call {
+        left: auto;
+        right: 20px;
+      }
+      .sticky-call a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          var(--red) 0%,
+          var(--red-light) 100%
+        );
+        color: var(--white);
+        padding: 11px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 0.88rem;
+        box-shadow: 0 6px 24px rgba(200, 16, 26, 0.45);
+        transition: transform 0.15s;
+      }
+      .sticky-call a:hover {
+        transform: scale(1.05);
+      }
+      .sticky-wa {
+        position: fixed;
+        bottom: 18px;
+        left: 20px;
+        z-index: 300;
+      }
+      body.rtl .sticky-wa {
+        left: auto;
+        right: 20px;
+      }
+      .sticky-wa a {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #25d366;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42);
+        transition: transform 0.15s;
+      }
+      .sticky-wa a:hover {
+        transform: scale(1.1);
+      }
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="#home" class="nav-logo">
+        <img src="./images/logo.png" alt="Taxi Asad" class="nav-logo-icon" />
+        <div class="nav-logo-text">
+          <div class="brand">TAXI<span>ASAD</span></div>
+          <div class="sub" data-key="nav_sub">Sint-Niklaas, België</div>
+        </div>
+      </a>
+      <ul class="nav-center">
+        <li><a href="#home" class="active" data-key="nav_home">Home</a></li>
+        <li><a href="#gallery" data-key="nav_gallery">Voertuigen</a></li>
+        <li><a href="#booking" data-key="nav_book">Reserveren</a></li>
+        <li><a href="#reviews" data-key="nav_reviews">Reviews</a></li>
+        <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLang('nl')">NL</button>
+          <button class="lang-btn" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" onclick="setLang('ar')">ع</button>
+        </div>
+        <a href="tel:+32498122410" class="nav-call-btn"
+          >📞 <span data-key="call_now">Bel nu</span></a
+        >
+        <button class="hamburger" id="menuBtn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <section id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          ✦ <span data-key="hero_badge">24/7 Taxidienst · Sint-Niklaas</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-key="hero_title1">Uw Comfort,</span
+          ><em data-key="hero_title2">Onze Prioriteit</em>
+        </h1>
+        <p class="hero-subtitle" data-key="hero_sub">
+          Professionele en betrouwbare taxidienst in Sint-Niklaas en omgeving.
+          Dag en nacht voor u klaar.
+        </p>
+        <div class="hero-cta">
+          <a href="#booking" class="btn-gold" data-key="hero_btn1"
+            >📅 Rit reserveren</a
+          >
+          <a href="tel:+32498122410" class="btn-outline-w" data-key="hero_btn2"
+            >📞 Direct bellen</a
+          >
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label" data-key="stat1">Ritten</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4.9★</div>
+            <div class="stat-label" data-key="stat2">Beoordeling</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label" data-key="stat3">Beschikbaar</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="features">
+      <div class="section">
+        <div class="section-header">
+          <span class="section-tag" data-key="feat_tag">Waarom Taxi Asad?</span>
+          <h2 class="section-title" data-key="feat_title">
+            Kwaliteit die u verdient
+          </h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✈️</div>
+            <div class="feature-title" data-key="feat1_t">
+              Luchthaven Vervoer
+            </div>
+            <div class="feature-text" data-key="feat1_d">
+              Zaventem, Charleroi, Schiphol
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <div class="feature-title" data-key="feat2_t">Altijd Op Tijd</div>
+            <div class="feature-text" data-key="feat2_d">
+              Puntualiteit is onze belofte
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-title" data-key="feat3_t">
+              Veilig & Betrouwbaar
+            </div>
+            <div class="feature-text" data-key="feat3_d">
+              Professionele chauffeur, verzekerd
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💳</div>
+            <div class="feature-title" data-key="feat4_t">Cash & Kaart</div>
+            <div class="feature-text" data-key="feat4_d">
+              Betalen zoals het u uitkomt
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="gallery" style="background: var(--black); padding: 90px 20px">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <div class="section-header">
+          <span class="section-tag" data-key="gal_tag">Onze Voertuigen</span>
+          <h2 class="section-title" data-key="gal_title">
+            Comfort op elk traject
+          </h2>
+          <div class="gold-line"></div>
+          <p class="section-sub" style="margin-top: 14px" data-key="gal_sub">
+            Moderne, comfortabele voertuigen voor uw rit
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item large">
+            <img
+              src="./images/foto-2.jpeg"
+              alt="Taxi Asad"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div class="gallery-placeholder" style="display: none">
+              <span data-key="gal_slot">📸 Voeg foto toe</span>
+            </div>
+            <div class="gallery-overlay">
+              <span data-key="gal_ext">Exterieur</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./images/foto-1.jpeg"
+              alt="Taxi Asad"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div class="gallery-placeholder" style="display: none">
+              <span data-key="gal_slot">📸 Voeg foto toe</span>
+            </div>
+            <div class="gallery-overlay">
+              <span data-key="gal_side">Zijkant</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./images/foto-3.jpeg"
+              alt="Taxi Asad Interieur"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div class="gallery-placeholder" style="display: none">
+              <span data-key="gal_slot">📸 Voeg foto toe</span>
+            </div>
+            <div class="gallery-overlay">
+              <span data-key="gal_int">Interieur</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./images/foto-1.jpeg"
+              alt="Taxi Asad Nachtrit"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div class="gallery-placeholder" style="display: none">
+              <span data-key="gal_slot">📸 Voeg foto toe</span>
+            </div>
+            <div class="gallery-overlay">
+              <span data-key="gal_night">Nachtrit</span>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./images/foto-2.jpeg"
+              alt="Taxi Asad Luchthaven"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div class="gallery-placeholder" style="display: none">
+              <span data-key="gal_slot">📸 Voeg foto toe</span>
+            </div>
+            <div class="gallery-overlay">
+              <span data-key="gal_ap">Luchthaven</span>
+            </div>
+          </div>
+        </div>
+        <p
+          style="
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.78rem;
+            color: var(--gray);
+          "
+          data-key="gal_note"
+        >
+          💡 Vervang de lege slots door uw eigen foto's in de HTML
+        </p>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div style="max-width: 780px; margin: 0 auto">
+        <div class="section-header">
+          <span class="section-tag" data-key="book_tag">Snel & Eenvoudig</span>
+          <h2 class="section-title" data-key="book_title">Rit Reserveren</h2>
+          <div class="gold-line"></div>
+          <p
+            class="section-sub"
+            style="margin-top: 14px; color: rgba(255, 255, 255, 0.45)"
+            data-key="book_sub"
+          >
+            Vul het formulier in en wij nemen contact met u op
+          </p>
+        </div>
+        <div class="booking-card">
+          <form
+            id="bookingForm"
+            action="https://formspree.io/f/xkoewydw"
+            method="POST"
+          >
+          <input type="hidden" name="_next" value="https://taxiasad.com/thank-you.html">
+            <input type="hidden" name="formulier" value="Rit reservering" />
+            <div class="form-grid">
+              <div class="form-group">
+                <label data-key="f_name">Volledige naam *</label>
+                <div class="input-wrap">
+                  <span class="input-icon">👤</span
+                  ><input
+                    type="text"
+                    name="naam"
+                    data-ph="fp_name"
+                    placeholder="Uw volledige naam"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label data-key="f_phone">Telefoonnummer *</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📱</span
+                  ><input
+                    type="tel"
+                    name="telefoon"
+                    placeholder="+32 0498 122 410"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group full">
+                <label data-key="f_from">Vertrekpunt *</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📍</span
+                  ><input
+                    type="text"
+                    name="vertrekpunt"
+                    data-ph="fp_from"
+                    placeholder="Adres van vertrek"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group full">
+                <label data-key="f_to">Bestemming *</label>
+                <div class="input-wrap">
+                  <span class="input-icon">🏁</span
+                  ><input
+                    type="text"
+                    name="bestemming"
+                    data-ph="fp_to"
+                    placeholder="Adres van bestemming"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label data-key="f_date">Datum *</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📅</span
+                  ><input type="date" name="datum" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label data-key="f_time">Tijdstip *</label>
+                <div class="input-wrap">
+                  <span class="input-icon">🕐</span
+                  ><input type="time" name="tijdstip" required />
+                </div>
+              </div>
+              <div class="form-group full">
+                <label data-key="f_email">E-mailadres (optioneel)</label>
+                <div class="input-wrap">
+                  <span class="input-icon">✉️</span
+                  ><input
+                    type="email"
+                    name="email"
+                    placeholder="uw@email.com"
+                  />
+                </div>
+              </div>
+              <div class="form-group full">
+                <label data-key="f_notes">Opmerkingen (optioneel)</label
+                ><textarea
+                  name="opmerkingen"
+                  data-ph="fp_notes"
+                  placeholder="Speciale wensen..."
+                ></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn-book">
+              <span data-key="btn_book">📅 Bevestig Reservering</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="section">
+        <div class="section-header">
+          <span class="section-tag" data-key="rev_tag">Wat klanten zeggen</span>
+          <h2 class="section-title" data-key="rev_title">Klantbeoordelingen</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-key="rev1_text">
+              "Uitstekende service! Altijd op tijd, vriendelijke chauffeur en
+              een comfortabele rit naar de luchthaven."
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div>
+                <div class="review-name">Sophie Janssen</div>
+                <div class="review-location">Sint-Niklaas</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-key="rev2_text">
+              "Super betrouwbaar en professioneel. De wagen was proper en de
+              chauffeur was vriendelijk. Zeker aanbevolen!"
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div>
+                <div class="review-name">Mohamed Al-Farsi</div>
+                <div class="review-location">Beveren</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-key="rev3_text">
+              "Perfect voor luchthaventritten. Asad is punctueel en maakt de rit
+              aangenaam. Absolute aanrader!"
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">L</div>
+              <div>
+                <div class="review-name">Laura De Smedt</div>
+                <div class="review-location">Lokeren</div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-key="rev4_text">
+              "Geweldige ervaring! Vriendelijke service, eerlijke prijs. Ik kom
+              zeker terug bij Taxi Asad."
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">K</div>
+              <div>
+                <div class="review-name">Karim Benali</div>
+                <div class="review-location">Sint-Niklaas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div style="max-width: 1000px; margin: 0 auto">
+        <div class="section-header">
+          <span class="section-tag" data-key="con_tag">Neem contact op</span>
+          <h2 class="section-title" data-key="con_title">Contacteer Ons</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <a href="tel:+32498122410" class="contact-item"
+              ><div class="contact-item-icon">📞</div>
+              <div>
+                <h4 data-key="c_phone_l">Telefoon</h4>
+                <p>+32 498 12 24 10</p>
+              </div></a
+            >
+            <a href="mailto:TaxiAsad@hotmail.com" class="contact-item"
+              ><div class="contact-item-icon">✉️</div>
+              <div>
+                <h4 data-key="c_email_l">E-mail</h4>
+                <p>TaxiAsad@hotmail.com</p>
+              </div></a
+            >
+            <div class="contact-item" style="cursor: default">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <h4 data-key="c_addr_l">Adres</h4>
+                <p>Heihoekstraat 173, 9100 Sint-Niklaas</p>
+              </div>
+            </div>
+            <div class="contact-item" style="cursor: default">
+              <div class="contact-item-icon">🕐</div>
+              <div>
+                <h4 data-key="c_hours_l">Openingsuren</h4>
+                <p data-key="c_hours">7 dagen/week, 24 uur</p>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a
+                href="https://wa.me/32498122410?text=Hallo,%20ik%20wil%20een%20rit%20reserveren"
+                class="btn-whatsapp"
+                target="_blank"
+                ><span data-key="btn_wa">WhatsApp</span></a
+              >
+              <a href="mailto:TaxiAsad@hotmail.com" class="btn-email-big"
+                >✉️ <span data-key="btn_email">Stuur e-mail</span></a
+              >
+            </div>
+            <form
+              action="https://formspree.io/f/xkoewydw"
+              method="POST"
+              class="email-form"
+            >
+              <input
+                type="hidden"
+                name="formulier"
+                value="Snelle contactvraag"
+              />
+              <input
+                type="email"
+                name="email"
+                id="qEmail"
+                data-ph="fp_your_email"
+                placeholder="Uw e-mailadres"
+                required
+              />
+              <textarea
+                name="bericht"
+                id="qMsg"
+                rows="3"
+                data-ph="fp_msg"
+                placeholder="Uw bericht..."
+                required
+              ></textarea>
+              <button type="submit" class="btn-send">
+                ✉️ <span data-key="btn_send">Versturen</span>
+              </button>
+            </form>
+          </div>
+          <div>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.2!2d4.1423!3d51.157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c37e6b00000001%3A0x1!2sHeihoekstraat+173%2C+9100+Sint-Niklaas!5e0!3m2!1snl!2sbe!4v1"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <p class="map-label">
+              📍 Heihoekstraat 173, 9100 Sint-Niklaas, België
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">TAXI<span>ASAD</span></div>
+      <div class="footer-tagline" data-key="footer_tag">
+        Uw comfort, onze prioriteit · Sint-Niklaas, België
+      </div>
+      <div class="footer-social">
+        <a
+          href="https://www.facebook.com/profile.php?id=61589580389805"
+          target="_blank"
+          rel="noopener"
+          class="fb"
+          aria-label="Facebook"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/taxi_asad/"
+          target="_blank"
+          rel="noopener"
+          class="ig"
+          aria-label="Instagram"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 2.16c-3.15 0-3.5.01-4.74.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.26.82-.38.38-.62.75-.82 1.26-.15.39-.33.97-.38 2.04-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.07.23 1.65.38 2.04.2.51.44.88.82 1.26.38.38.75.62 1.26.82.39.15.97.33 2.04.38 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.26-.82.38-.38.62-.75.82-1.26.15-.39.33-.97.38-2.04.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.07-.23-1.65-.38-2.04-.2-.51-.44-.88-.82-1.26a3.39 3.39 0 0 0-1.26-.82c-.39-.15-.97-.33-2.04-.38-1.24-.06-1.59-.07-4.74-.07zm0 3.68a3.96 3.96 0 1 1 0 7.92 3.96 3.96 0 0 1 0-7.92zm0 6.53a2.57 2.57 0 1 0 0-5.14 2.57 2.57 0 0 0 0 5.14zm5.04-6.69a.92.92 0 1 1-1.85 0 .92.92 0 0 1 1.85 0z"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="footer-copy" data-key="footer_copy">
+        © 2026 Taxi Asad · Alle rechten voorbehouden
+      </div>
+    </footer>
+
+    <div class="sticky-call">
+      <a href="tel:+32498122410">📞 <span data-key="call_now">Bel nu</span></a>
+    </div>
+    <div class="sticky-wa">
+      <a href="https://wa.me/32498122410" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="white">
+          <path
+            d="M16 0C7.163 0 0 7.163 0 16c0 2.83.74 5.49 2.03 7.8L0 32l8.4-2.02A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.3a13.26 13.26 0 01-6.77-1.86l-.48-.29-4.99 1.2 1.23-4.84-.31-.5A13.26 13.26 0 012.7 16c0-7.34 5.96-13.3 13.3-13.3S29.3 8.66 29.3 16 23.34 29.3 16 29.3zm7.3-9.97c-.4-.2-2.36-1.16-2.72-1.3-.37-.13-.63-.2-.9.2-.26.4-1.02 1.3-1.25 1.56-.23.27-.46.3-.86.1-.4-.2-1.7-.63-3.24-2-1.2-1.07-2-2.39-2.24-2.79-.23-.4-.02-.62.18-.82.18-.18.4-.47.6-.7.2-.23.27-.4.4-.66.13-.27.07-.5-.03-.7-.1-.2-.9-2.16-1.23-2.96-.32-.77-.65-.67-.9-.68-.23-.01-.5-.01-.76-.01s-.7.1-1.07.5c-.37.4-1.4 1.37-1.4 3.34s1.43 3.87 1.63 4.14c.2.26 2.82 4.3 6.83 6.03 4.01 1.72 4.01 1.15 4.73 1.08.72-.07 2.36-.96 2.7-1.9.33-.93.33-1.72.23-1.9-.1-.17-.37-.27-.77-.47z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <script>
+      const T = {
+        nl: {
+          nav_sub: "Sint-Niklaas, België",
+          nav_home: "Home",
+          nav_gallery: "Voertuigen",
+          nav_book: "Reserveren",
+          nav_reviews: "Reviews",
+          nav_contact: "Contact",
+          call_now: "Bel nu",
+          hero_badge: "24/7 Taxidienst · Sint-Niklaas",
+          hero_title1: "Uw Comfort,",
+          hero_title2: "Onze Prioriteit",
+          hero_sub:
+            "Professionele en betrouwbare taxidienst in Sint-Niklaas en omgeving. Dag en nacht voor u klaar.",
+          hero_btn1: "📅 Rit reserveren",
+          hero_btn2: "📞 Direct bellen",
+          stat1: "Ritten",
+          stat2: "Beoordeling",
+          stat3: "Beschikbaar",
+          feat_tag: "Waarom Taxi Asad?",
+          feat_title: "Kwaliteit die u verdient",
+          feat1_t: "Luchthaven Vervoer",
+          feat1_d: "Zaventem, Charleroi, Schiphol",
+          feat2_t: "Altijd Op Tijd",
+          feat2_d: "Puntualiteit is onze belofte",
+          feat3_t: "Veilig & Betrouwbaar",
+          feat3_d: "Professionele chauffeur, verzekerd",
+          feat4_t: "Cash & Kaart",
+          feat4_d: "Betalen zoals het u uitkomt",
+          gal_tag: "Onze Voertuigen",
+          gal_title: "Comfort op elk traject",
+          gal_sub: "Moderne, comfortabele voertuigen voor uw rit",
+          gal_slot: "📸 Voeg foto toe",
+          gal_ext: "Exterieur",
+          gal_side: "Zijkant",
+          gal_int: "Interieur",
+          gal_night: "Nachtrit",
+          gal_ap: "Luchthaven",
+          gal_note: "💡 Vervang de lege slots door uw eigen foto's in de HTML",
+          book_tag: "Snel & Eenvoudig",
+          book_title: "Rit Reserveren",
+          book_sub: "Vul het formulier in en wij nemen contact met u op",
+          f_name: "Volledige naam *",
+          f_phone: "Telefoonnummer *",
+          f_from: "Vertrekpunt *",
+          f_to: "Bestemming *",
+          f_date: "Datum *",
+          f_time: "Tijdstip *",
+          f_email: "E-mailadres (optioneel)",
+          f_notes: "Opmerkingen (optioneel)",
+          fp_name: "Uw volledige naam",
+          fp_from: "Adres van vertrek",
+          fp_to: "Adres van bestemming",
+          fp_notes: "Speciale wensen...",
+          fp_your_email: "Uw e-mailadres",
+          fp_msg: "Uw bericht...",
+          btn_book: "📅 Bevestig Reservering",
+          rev_tag: "Wat klanten zeggen",
+          rev_title: "Klantbeoordelingen",
+          rev1_text:
+            '"Uitstekende service! Altijd op tijd, vriendelijke chauffeur en een comfortabele rit naar de luchthaven."',
+          rev2_text:
+            '"Super betrouwbaar en professioneel. De wagen was proper en de chauffeur was vriendelijk. Zeker aanbevolen!"',
+          rev3_text:
+            '"Perfect voor luchthaventritten. Asad is punctueel en maakt de rit aangenaam. Absolute aanrader!"',
+          rev4_text:
+            '"Geweldige ervaring! Vriendelijke service, eerlijke prijs. Ik kom zeker terug bij Taxi Asad."',
+          con_tag: "Neem contact op",
+          con_title: "Contacteer Ons",
+          c_phone_l: "Telefoon",
+          c_email_l: "E-mail",
+          c_addr_l: "Adres",
+          c_hours_l: "Openingsuren",
+          c_hours: "7 dagen/week, 24 uur",
+          btn_wa: "WhatsApp",
+          btn_email: "Stuur e-mail",
+          btn_send: "Versturen",
+          footer_tag: "Uw comfort, onze prioriteit · Sint-Niklaas, België",
+          footer_copy: "© 2026 Taxi Asad · Alle rechten voorbehouden",
+        },
+        en: {
+          nav_sub: "Sint-Niklaas, Belgium",
+          nav_home: "Home",
+          nav_gallery: "Vehicles",
+          nav_book: "Book",
+          nav_reviews: "Reviews",
+          nav_contact: "Contact",
+          call_now: "Call now",
+          hero_badge: "24/7 Taxi Service · Sint-Niklaas",
+          hero_title1: "Your Comfort,",
+          hero_title2: "Our Priority",
+          hero_sub:
+            "Professional and reliable taxi service in Sint-Niklaas and surroundings. Available day and night.",
+          hero_btn1: "📅 Book a Ride",
+          hero_btn2: "📞 Call Directly",
+          stat1: "Rides",
+          stat2: "Rating",
+          stat3: "Available",
+          feat_tag: "Why Taxi Asad?",
+          feat_title: "Quality You Deserve",
+          feat1_t: "Airport Transfers",
+          feat1_d: "Zaventem, Charleroi, Schiphol",
+          feat2_t: "Always On Time",
+          feat2_d: "Punctuality is our promise",
+          feat3_t: "Safe & Reliable",
+          feat3_d: "Professional driver, insured vehicle",
+          feat4_t: "Cash & Card",
+          feat4_d: "Pay the way you prefer",
+          gal_tag: "Our Vehicles",
+          gal_title: "Comfort on every trip",
+          gal_sub: "Modern, comfortable vehicles for your ride",
+          gal_slot: "📸 Add photo",
+          gal_ext: "Exterior",
+          gal_side: "Side view",
+          gal_int: "Interior",
+          gal_night: "Night ride",
+          gal_ap: "Airport",
+          gal_note: "💡 Replace empty slots with your own photos in the HTML",
+          book_tag: "Fast & Easy",
+          book_title: "Book a Ride",
+          book_sub: "Fill in the form and we will contact you to confirm",
+          f_name: "Full name *",
+          f_phone: "Phone number *",
+          f_from: "Departure point *",
+          f_to: "Destination *",
+          f_date: "Date *",
+          f_time: "Time *",
+          f_email: "Email address (optional)",
+          f_notes: "Notes (optional)",
+          fp_name: "Your full name",
+          fp_from: "Departure address",
+          fp_to: "Destination address",
+          fp_notes: "Special requests...",
+          fp_your_email: "Your email address",
+          fp_msg: "Your message...",
+          btn_book: "📅 Confirm Booking",
+          rev_tag: "What customers say",
+          rev_title: "Customer Reviews",
+          rev1_text:
+            '"Excellent service! Always on time, friendly driver and a comfortable ride to the airport."',
+          rev2_text:
+            '"Super reliable and professional. The car was clean and the driver was friendly. Highly recommended!"',
+          rev3_text:
+            '"Perfect for airport trips. Asad is punctual and makes the ride enjoyable. Absolute must!"',
+          rev4_text:
+            '"Great experience! Friendly service, fair price. I will definitely use Taxi Asad again."',
+          con_tag: "Get in touch",
+          con_title: "Contact Us",
+          c_phone_l: "Phone",
+          c_email_l: "Email",
+          c_addr_l: "Address",
+          c_hours_l: "Opening Hours",
+          c_hours: "7 days/week, 24 hours",
+          btn_wa: "WhatsApp",
+          btn_email: "Send email",
+          btn_send: "Send",
+          footer_tag: "Your comfort, our priority · Sint-Niklaas, Belgium",
+          footer_copy: "© 2026 Taxi Asad · All rights reserved",
+        },
+        ar: {
+          nav_sub: "سينت-نيكلاس، بلجيكا",
+          nav_home: "الرئيسية",
+          nav_gallery: "سياراتنا",
+          nav_book: "احجز",
+          nav_reviews: "التقييمات",
+          nav_contact: "تواصل",
+          call_now: "اتصل الآن",
+          hero_badge: "خدمة تاكسي 24/7 · سينت-نيكلاس",
+          hero_title1: "راحتك،",
+          hero_title2: "أولويتنا",
+          hero_sub:
+            "خدمة تاكسي احترافية وموثوقة في سينت-نيكلاس والمنطقة المحيطة. متاحون ليلاً ونهاراً.",
+          hero_btn1: "📅 احجز رحلة",
+          hero_btn2: "📞 اتصل مباشرة",
+          stat1: "رحلة",
+          stat2: "التقييم",
+          stat3: "متاح",
+          feat_tag: "لماذا تاكسي أسعد؟",
+          feat_title: "جودة تستحقها",
+          feat1_t: "نقل المطار",
+          feat1_d: "زافنتم، شارلروا، سخيبول",
+          feat2_t: "دائماً في الموعد",
+          feat2_d: "الالتزام بالمواعيد وعدنا",
+          feat3_t: "آمن وموثوق",
+          feat3_d: "سائق محترف وسيارة مؤمنة",
+          feat4_t: "نقداً أو بطاقة",
+          feat4_d: "ادفع كما تشاء",
+          gal_tag: "سياراتنا",
+          gal_title: "راحة في كل رحلة",
+          gal_sub: "سيارات حديثة ومريحة لرحلتك",
+          gal_slot: "📸 أضف صورة",
+          gal_ext: "الخارج",
+          gal_side: "الجانب",
+          gal_int: "الداخل",
+          gal_night: "رحلة ليلية",
+          gal_ap: "المطار",
+          gal_note: "💡 استبدل الأماكن الفارغة بصورك الخاصة في الـ HTML",
+          book_tag: "سريع وسهل",
+          book_title: "احجز رحلتك",
+          book_sub: "املأ النموذج وسنتواصل معك لتأكيد الحجز",
+          f_name: "الاسم الكامل *",
+          f_phone: "رقم الهاتف *",
+          f_from: "نقطة الانطلاق *",
+          f_to: "الوجهة *",
+          f_date: "التاريخ *",
+          f_time: "الوقت *",
+          f_email: "البريد الإلكتروني (اختياري)",
+          f_notes: "ملاحظات (اختياري)",
+          fp_name: "اسمك الكامل",
+          fp_from: "عنوان الانطلاق",
+          fp_to: "عنوان الوجهة",
+          fp_notes: "طلبات خاصة...",
+          fp_your_email: "بريدك الإلكتروني",
+          fp_msg: "رسالتك...",
+          btn_book: "📅 تأكيد الحجز",
+          rev_tag: "ما يقوله العملاء",
+          rev_title: "تقييمات العملاء",
+          rev1_text:
+            '"خدمة ممتازة! دائماً في الموعد، سائق ودود ورحلة مريحة للمطار."',
+          rev2_text:
+            '"موثوق جداً واحترافي. السيارة نظيفة والسائق كان ودوداً. أنصح به بشدة!"',
+          rev3_text:
+            '"مثالي لرحلات المطار. أسعد دقيق في المواعيد ويجعل الرحلة ممتعة."',
+          rev4_text:
+            '"تجربة رائعة! خدمة ودية، سعر عادل. سأعود بالتأكيد لتاكسي أسعد."',
+          con_tag: "تواصل معنا",
+          con_title: "اتصل بنا",
+          c_phone_l: "الهاتف",
+          c_email_l: "البريد الإلكتروني",
+          c_addr_l: "العنوان",
+          c_hours_l: "ساعات العمل",
+          c_hours: "7 أيام في الأسبوع، 24 ساعة",
+          btn_wa: "واتساب",
+          btn_email: "أرسل بريد",
+          btn_send: "إرسال",
+          footer_tag: "راحتك أولويتنا · سينت-نيكلاس، بلجيكا",
+          footer_copy: "© 2026 تاكسي أسعد · جميع الحقوق محفوظة",
+        },
+      };
+
+      function setLang(lang) {
+        const t = T[lang];
+        document.querySelectorAll("[data-key]").forEach((el) => {
+          if (t[el.dataset.key] !== undefined)
+            el.textContent = t[el.dataset.key];
+        });
+        document.querySelectorAll("[data-ph]").forEach((el) => {
+          if (t[el.dataset.ph] !== undefined) el.placeholder = t[el.dataset.ph];
+        });
+        const rtl = lang === "ar";
+        document.documentElement.lang = lang;
+        document.documentElement.dir = rtl ? "rtl" : "ltr";
+        document.body.classList.toggle("rtl", rtl);
+        document.querySelectorAll(".lang-btn").forEach((b) => {
+          const match =
+            lang === "ar"
+              ? b.textContent === "ع"
+              : b.textContent === lang.toUpperCase();
+          b.classList.toggle("active", match);
+        });
+        localStorage.setItem("ta_lang", lang);
+      }
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navbar = document.getElementById("navbar");
+      menuBtn.addEventListener("click", () => navbar.classList.toggle("open"));
+      document
+        .querySelectorAll(".nav-center a")
+        .forEach((a) =>
+          a.addEventListener("click", () => navbar.classList.remove("open")),
+        );
+
+      window.addEventListener("scroll", () => {
+        let cur = "";
+        ["home", "gallery", "booking", "reviews", "contact"].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 90) cur = id;
+        });
+        document
+          .querySelectorAll(".nav-center a")
+          .forEach((a) =>
+            a.classList.toggle("active", a.getAttribute("href") === "#" + cur),
+          );
+      });
+
+      const di = document.querySelector('input[name="datum"]');
+      if (di) di.min = new Date().toISOString().split("T")[0];
+
+      setLang(localStorage.getItem("ta_lang") || "nl");
+    </script>
+  </body>
+</html>
